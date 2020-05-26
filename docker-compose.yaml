@@ -1,0 +1,12 @@
+version: '2.1'
+services:
+  customer-account-aggregation:
+    build:
+      context: .
+    container_name: customer-account-aggregation
+    image: customeraccountaggregation
+    ports:
+      - 8085:8085
+    command: java -jar customeraccountaggregation.jar
+    environment:
+      EXTERNAL_SERVICE_HOST: host.docker.internal

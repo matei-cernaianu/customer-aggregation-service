@@ -5,7 +5,6 @@ import com.matei.customeraccountaggregation.entity.Account;
 import com.matei.customeraccountaggregation.mapper.AccountsMapper;
 import com.matei.customeraccountaggregation.repository.AccountRepository;
 import com.matei.customeraccountaggregation.service.external.ExternalAccountService;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +14,8 @@ import static com.matei.customeraccountaggregation.util.ValidationUtils.areAccou
 
 @Service
 public class AccountService {
+
+    private static final String ACCOUNT_PREFIX = "Account-";
 
     @Autowired
     private AccountsMapper accountsMapper;
@@ -26,7 +27,7 @@ public class AccountService {
     private ExternalAccountService externalAccountService;
 
     public List<AccountDTO> getAccountsDetails(String username) {
-        final List<Account> accounts = accountRepository.getAccountsByName("Account-" + username);
+        final List<Account> accounts = accountRepository.getAccountsByName(ACCOUNT_PREFIX + username);
 
         if (areAccountsUpdated(accounts)) {
             return accountsMapper.mapToDTO(accounts);

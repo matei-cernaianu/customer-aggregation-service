@@ -5,7 +5,6 @@ import com.matei.customeraccountaggregation.enums.CurrencyCode;
 import com.matei.customeraccountaggregation.enums.TransactionStatus;
 import lombok.Builder;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import java.math.BigDecimal;
 import java.time.Instant;

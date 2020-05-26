@@ -2,8 +2,6 @@ package com.matei.customeraccountaggregation.util;
 
 import com.matei.customeraccountaggregation.entity.Account;
 import com.matei.customeraccountaggregation.entity.Transaction;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
@@ -11,10 +9,11 @@ import java.util.List;
 
 public final class ValidationUtils {
 
-    private ValidationUtils (){}
+    private ValidationUtils() {
+    }
 
     public static void validateUsername(String username) {
-        if(!username.matches("^[a-zA-Z0-9._-]{3,}$")) {
+        if (!username.matches("^[a-zA-Z0-9._-]{3,}$")) {
             throw new IllegalArgumentException("Invalid username");
         }
     }

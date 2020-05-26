@@ -1,7 +1,6 @@
 package com.matei.customeraccountaggregation.service.external;
 
 import com.matei.customeraccountaggregation.dto.TransactionDTO;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;

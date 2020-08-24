@@ -114,3 +114,6 @@ Running this service requires following dependecies to be installed on your mach
       }
       ]
       ```
+##### How to access in memory DB via Web Console
+
+  * This service uses embedded in memory H2DB, in order to access it you should access ``` localhost:8085/h2-console ``` with username **sa** and password should be left empty.

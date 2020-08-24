@@ -25,3 +25,24 @@ CREATE TABLE transactions
     amount                 DECIMAL(31, 12) NOT NULL,
     description            VARCHAR(250)    NOT NULL
 );
+
+CREATE TABLE users
+(
+    user_id                BIGINT      PRIMARY KEY ,
+    user_name              VARCHAR(50)     NOT NULL,
+    phone_number           VARCHAR(50)     NOT NULL,
+    email                  VARCHAR(50)     NOT NULL,
+    created_at             TIMESTAMP       NOT NULL
+);
+
+CREATE TABLE alerts
+(
+    user_id                BIGINT          NOT NULL,
+    account_id             UUID            NOT NULL,
+    created_at             TIMESTAMP       NOT NULL,
+    updated_at             TIMESTAMP       NOT NULL,
+    alert_type             VARCHAR(50)     NOT NULL,
+    threshold              INT             NOT NULL,
+    primary key (user_id, account_id),
+    foreign key (user_id) references users(user_id)
+);

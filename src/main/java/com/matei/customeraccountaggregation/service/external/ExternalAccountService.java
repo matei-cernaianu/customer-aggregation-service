@@ -37,7 +37,8 @@ public class ExternalAccountService {
                 externalAccountURI,
                 HttpMethod.GET,
                 new HttpEntity(headers),
-                new ParameterizedTypeReference<List<AccountDTO>>() {}).getBody();
+                new ParameterizedTypeReference<List<AccountDTO>>() {
+                }).getBody();
     }
 
     private String getExternalAccessToken(String username) {
